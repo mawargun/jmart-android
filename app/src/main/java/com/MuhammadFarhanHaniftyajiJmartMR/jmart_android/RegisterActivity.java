@@ -11,11 +11,11 @@ import android.widget.Toast;
 
 import com.MuhammadFarhanHaniftyajiJmartMR.jmart_android.model.Account;
 import com.MuhammadFarhanHaniftyajiJmartMR.jmart_android.request.RegisterRequest;
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -29,12 +29,11 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        EditText textName = findViewById(R.id.nameRegister);
-        EditText textEmail = findViewById(R.id.emailRegister);
-        EditText textPassword = findViewById(R.id.passwordRegister);
-        Button buttonRegister = findViewById(R.id.buttonRegister);
-
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
+        EditText textname = findViewById(R.id.editTextTextPersonName);
+        EditText textemail = findViewById(R.id.editTextTextEmailAddress2);
+        EditText textpassword = findViewById(R.id.editTextTextPassword2);
+        Button buttonregister = findViewById(R.id.button2);
+        buttonregister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Response.Listener<String> listener = new Response.Listener<String>() {
@@ -42,24 +41,22 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             JSONObject object = new JSONObject(response);
-                            if(object != null){
-                                Toast.makeText(RegisterActivity.this, "Register Success!", Toast.LENGTH_SHORT);
-                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                loggedAccount = gson.fromJson(object.toString(), Account.class);
-                                startActivity(intent);
-                            }
+                            Toast.makeText(RegisterActivity.this, "Register Success!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            loggedAccount = gson.fromJson(object.toString(), Account.class);
+                            startActivity(intent);
                         }
                         catch (JSONException e){
                             e.printStackTrace();
-                            Toast.makeText(RegisterActivity.this, "Register Error!", Toast.LENGTH_SHORT);
+                            Toast.makeText(RegisterActivity.this, "Register Error!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 };
-                RegisterRequest registerRequest = new RegisterRequest(textName.getText().toString(), textEmail.getText().toString(), textPassword.getText().toString(), listener, null);
+                RegisterRequest registerRequest = new RegisterRequest(textname.getText().toString(), textemail.getText().toString(), textpassword.getText().toString(), listener, null);
                 RequestQueue requestQueue = Volley.newRequestQueue(RegisterActivity.this);
                 requestQueue.add(registerRequest);
+
             }
         });
-
     }
 }

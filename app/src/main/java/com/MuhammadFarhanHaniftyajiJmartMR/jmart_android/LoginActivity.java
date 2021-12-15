@@ -16,13 +16,13 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 public class LoginActivity extends AppCompatActivity {
     private static final Gson gson = new Gson();
-    private static Account loggedAccount = null;
+    public static Account loggedAccount;
 
     public static Account getLoggedAccount(){
         return loggedAccount;
@@ -33,9 +33,17 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EditText textemail = findViewById(R.id.emailLogin);
-        EditText textpassword = findViewById(R.id.passwordLogin);
-        Button buttonlogin = findViewById(R.id.buttonLogin);
+        TextView textregister = findViewById(R.id.textView);
+        textregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+        EditText textemail = findViewById(R.id.editTextTextEmailAddress);
+        EditText textpassword = findViewById(R.id.editTextTextPassword);
+        Button buttonlogin = findViewById(R.id.button);
         buttonlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                         try {
                             JSONObject object = new JSONObject(response);
                             if(object != null){
-                                Toast.makeText(LoginActivity.this, "Login Success!", Toast.LENGTH_SHORT);
+                                Toast.makeText(LoginActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 loggedAccount = gson.fromJson(object.toString(), Account.class);
                                 startActivity(intent);
@@ -53,21 +61,13 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         catch (JSONException e){
                             e.printStackTrace();
-                            Toast.makeText(LoginActivity.this, "Login Error!", Toast.LENGTH_SHORT);
+                            Toast.makeText(LoginActivity.this, "Login Error!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 };
                 LoginRequest loginRequest = new LoginRequest(textemail.getText().toString(), textpassword.getText().toString(), listener, null);
                 RequestQueue requestQueue = Volley.newRequestQueue(LoginActivity.this);
                 requestQueue.add(loginRequest);
-            }
-        });
-        TextView register = findViewById(R.id.textToRegister);
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
             }
         });
     }

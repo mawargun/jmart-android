@@ -4,17 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Jmart android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21614583333333334" />
+        <entry key="..\:/Jmart android/app/src/main/res/drawable/ic_baseline_add_box_24.xml" value="0.15208333333333332" />
         <entry key="..\:/Jmart android/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1671875" />
         <entry key="..\:/Jmart android/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1671875" />
+        <entry key="..\:/Jmart android/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.11979166666666667" />
         <entry key="..\:/Jmart android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21614583333333334" />
-        <entry key="..\:/Jmart android/app/src/main/res/layout/activity_about_me.xml" value="0.18" />
-        <entry key="..\:/Jmart android/app/src/main/res/layout/activity_create_product.xml" value="0.18" />
+        <entry key="..\:/Jmart android/app/src/main/res/layout/activity_about_me.xml" value="0.25" />
+        <entry key="..\:/Jmart android/app/src/main/res/layout/activity_create_product.xml" value="0.25" />
         <entry key="..\:/Jmart android/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Jmart android/app/src/main/res/layout/activity_main.xml" value="0.15" />
+        <entry key="..\:/Jmart android/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Jmart android/app/src/main/res/layout/activity_payment.xml" value="0.1" />
+        <entry key="..\:/Jmart android/app/src/main/res/layout/activity_product_detail.xml" value="0.25" />
         <entry key="..\:/Jmart android/app/src/main/res/layout/activity_register.xml" value="0.16" />
-        <entry key="..\:/Jmart android/app/src/main/res/layout/fragment_filter.xml" value="0.25" />
+        <entry key="..\:/Jmart android/app/src/main/res/layout/fragment_filter.xml" value="0.22" />
         <entry key="..\:/Jmart android/app/src/main/res/layout/fragment_product.xml" value="0.2" />
-        <entry key="..\:/Jmart android/app/src/main/res/menu/top_menu.xml" value="0.1" />
+        <entry key="..\:/Jmart android/app/src/main/res/layout/recyclerview_row.xml" value="0.10009057971014493" />
+        <entry key="..\:/Jmart android/app/src/main/res/menu/menu_main.xml" value="0.1" />
+        <entry key="..\:/Jmart android/app/src/main/res/menu/top_menu.xml" value="0.25" />
+        <entry key="..\:/Jmart android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1609375" />
+        <entry key="..\:/Jmart android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1609375" />
       </map>
     </option>
   </component>
