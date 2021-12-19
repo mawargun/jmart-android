@@ -1,14 +1,14 @@
 package com.MuhammadFarhanHaniftyajiJmartMR.jmart_android.model;
 
 /**
- * Class Store here
- * model as a Store similar to backend
+ * Class Shipment here
+ * model as a Shipment similar to backend
  * @author Muhammad Farhan Haniftyaji
  * @version 1.0
  */
 
-public class Store {
+public class Shipment {
+    public int cost;
     public String address;
-    public String name;
-    public String phoneNumber;
+    public String receipt;
 }

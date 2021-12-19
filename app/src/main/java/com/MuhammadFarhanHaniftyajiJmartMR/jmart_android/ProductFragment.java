@@ -29,13 +29,29 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
+/**
+ * Class ProductFragment here
+ * Fragment filter displays a list of products registered on the back-end to main activity
+ * @author Muhammad Farhan Haniftyaji
+ * @version 1.0
+ *
+ */
+
 public class ProductFragment extends Fragment {
 
     private static final Gson gson = new Gson();
     public static ArrayList<Product> productsList = new ArrayList<>();
     final int pageSize = 21;
     static int page = 0;
-    static Product productClicked=null;
+    public static Product productClicked=null;
+    public static ArrayAdapter<Product> listViewAdapter;
+
+    /**
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +63,11 @@ public class ProductFragment extends Fragment {
 
         inputPage.setText(String.valueOf(page + 1), TextView.BufferType.EDITABLE);
 
+        /**
+         * @description
+         * nextButton is used to display the list of products on the next page
+         */
+
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +78,10 @@ public class ProductFragment extends Fragment {
             }
         });
 
+        /**
+         * @description
+         * prevButton is used to display the list of products on the previous page
+         */
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,12 +95,18 @@ public class ProductFragment extends Fragment {
             }
         });
 
+        /**
+         * @description
+         * goButton is used to display a list of products on a particular page
+         */
+
         goButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(),"Go!", Toast.LENGTH_SHORT).show();
                 page = Integer.parseInt(inputPage.getText().toString()) - 1;
                 getActivity().finish();
+                getActivity().overridePendingTransition(0,0);
                 getActivity().startActivity(getActivity().getIntent());
             }
         });
@@ -89,7 +120,7 @@ public class ProductFragment extends Fragment {
                         productsList = gson.fromJson(object.toString(), new TypeToken<ArrayList<Product>>() {
                         }.getType());
                         System.out.println(productsList);
-                        ArrayAdapter<Product> listViewAdapter = new ArrayAdapter<Product>(
+                        listViewAdapter = new ArrayAdapter<Product>(
                                 getActivity(),
                                 android.R.layout.simple_list_item_1,
                                 productsList
@@ -103,7 +134,7 @@ public class ProductFragment extends Fragment {
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                                 //productClicked = gson.fromJson(lv.getItemAtPosition(i).toString(),Product.class);
                                 productClicked = (Product) lv.getItemAtPosition(i);
-                                Toast.makeText(getActivity(),"keklik boy", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(),"product selected", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getActivity(), ProductDetailActivity.class);
                                 startActivity(intent);
                             }

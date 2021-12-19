@@ -2,9 +2,6 @@ package com.MuhammadFarhanHaniftyajiJmartMR.jmart_android;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +9,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+
+import androidx.fragment.app.Fragment;
 
 import com.MuhammadFarhanHaniftyajiJmartMR.jmart_android.model.Product;
 import com.MuhammadFarhanHaniftyajiJmartMR.jmart_android.request.RequestFactory;
@@ -29,8 +29,17 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
+/**
+ * Class FilterFragment here
+ * Fragment filter serves to display the filter section
+ * which can filter the list of desired products according to the parameters .
+ * @author Muhammad Farhan Haniftyaji
+ * @version 1.0
+ *
+ */
+
 public class FilterFragment extends Fragment {
-    //menginisiasi field
+
     private static final Gson gson = new Gson();
     public static ArrayList<Product> productsList = new ArrayList<>();
     final int pageSize = 100;
@@ -48,6 +57,24 @@ public class FilterFragment extends Fragment {
         Spinner category = productView.findViewById(R.id.SpinnerCategory);
         Button apply = productView.findViewById(R.id.applyButton);
         Button clear = productView.findViewById(R.id.clearButton);
+        ListView lv = (ListView) productView.findViewById(R.id.filteredView);
+
+        newCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    usedCheck.setChecked(false);
+                }
+            }
+        });
+        usedCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    newCheck.setChecked(false);
+                }
+            }
+        });
 
         //mengosongkan parameter yang digunakan untuk menfilter
         clear.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +85,7 @@ public class FilterFragment extends Fragment {
                 highestPrice.setText("");
                 newCheck.setChecked(false);
                 usedCheck.setChecked(false);
+                lv.setVisibility(View.GONE);
             }
         });
 
@@ -75,18 +103,7 @@ public class FilterFragment extends Fragment {
                                 android.R.layout.simple_list_item_1,
                                 productsList
                         );
-                        ListView lv = (ListView) productView.findViewById(R.id.filteredView);
-
-                        lv.setAdapter(listViewAdapter);
-
-                        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                                ProductFragment.productClicked = (Product) lv.getItemAtPosition(i);
-                                Intent intent = new Intent(getActivity(), ProductDetailActivity.class);
-                                startActivity(intent);
-                            }
-                        });
+                        lv.setVisibility(View.GONE);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -115,8 +132,7 @@ public class FilterFragment extends Fragment {
                                         android.R.layout.simple_list_item_1,
                                         productsList
                                 );
-                                ListView lv = (ListView) productView.findViewById(R.id.filteredView);
-
+                                lv.setVisibility(View.VISIBLE);
                                 lv.setAdapter(listViewAdapter);
 
                                 lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -134,7 +150,7 @@ public class FilterFragment extends Fragment {
                     }
                 };
                 RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
-                requestQueue.add(RequestFactory.getProduct(page, pageSize, name.getText().toString(), lowestPrice.getText().toString(), highestPrice.getText().toString(), category.getSelectedItem().toString(), listener, null));
+                requestQueue.add(RequestFactory.getProduct(page, pageSize, name.getText().toString(), lowestPrice.getText().toString(), highestPrice.getText().toString(), category.getSelectedItem().toString(), String.valueOf(newCheck.isChecked()), listener, null));
             }
         });
         return productView;

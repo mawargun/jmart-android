@@ -47,7 +47,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
-                android:text="go" />
+                android:backgroundTint="#ffa31a"
+                android:text="go"
+                android:textColor="#1b1b1b"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

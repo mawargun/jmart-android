@@ -16,6 +16,14 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * Class CreateProductActivity here
+ * register the product you want to sell so that it will be stored in the back-end
+ * and will appear in the product list
+ * @author Muhammad Farhan Haniftyaji
+ * @version 1.0
+ */
+
 public class CreateProductActivity extends AppCompatActivity {
     private static final Gson gson = new Gson();
     private static  Product product = null;

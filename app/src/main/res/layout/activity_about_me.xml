@@ -4,333 +4,394 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1b1b1b"
     tools:context=".AboutMeActivity">
 
-    <LinearLayout
-        android:layout_width="394dp"
-        android:layout_height="739dp"
-        android:layout_marginTop="100dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="580dp"
+        android:layout_marginTop="15dp"
+        app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/titleTextAbout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="10dp"
-            android:text="Account Details"
-            android:textSize="20sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginVertical="5dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/nameTextAbout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp"
-                    android:text="Name"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/outputNameAbout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_weight="1"
-                    android:textAlignment="textEnd"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/emailTextAbout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp"
-                    android:text="Email"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/outputEmailAbout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_weight="1"
-                    android:textAlignment="textEnd"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/balanceTextAbout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp"
-                    android:text="Balance"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/outputBalanceAbout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginVertical="5dp"
-                    android:layout_weight="1"
-                    android:textAlignment="viewEnd"
-                    android:textColor="#4CAF50"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="71dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/topupInputAbout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginVertical="5dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="number"
-                android:minHeight="48dp"
-                android:text="0"
-                android:textSize="16sp"
-                tools:text="0" />
-
-            <Button
-                android:id="@+id/topupButtonAbout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginVertical="5dp"
-                android:layout_weight="1"
-                android:text="TOP-UP" />
-        </LinearLayout>
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:background="#292929"
+            tools:context=".AboutMeActivity">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="350dp"
+                android:layout_height="61dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_accountDetail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_baseline_person_pin_24" />
+
+            <TextView
+                android:id="@+id/tv_accountDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="119dp"
+                android:layout_marginTop="68dp"
+                android:layout_marginEnd="119dp"
+                android:gravity="center"
+                android:text="Account Details"
+                android:textColor="#ffa31a"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:text="Name"
+                android:textColor="	#ffffff"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Email"
+                android:textColor="	#ffffff"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:text="Balance"
+                android:textColor="	#ffffff"
+                app:layout_constraintEnd_toEndOf="@+id/tv_email"
+                app:layout_constraintStart_toStartOf="@+id/tv_email"
+                app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+            <TextView
+                android:id="@+id/tv_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="TextView"
+                android:textColor="	#ffffff"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_userEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="TextView"
+                android:textColor="	#ffffff"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_email" />
+
+            <TextView
+                android:id="@+id/tv_userBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="TextView"
+                android:textColor="#238F27"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_balance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_balance" />
+
+            <EditText
+                android:id="@+id/et_topUpAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="8dp"
+                android:ems="7"
+                android:hint="Top Up Amount"
+                android:inputType="numberDecimal"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_balance"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
-                android:id="@+id/registerStoreButtonAbout"
-                android:layout_width="match_parent"
+                android:id="@+id/btnTopUp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="10dp"
-                android:text="REGISTER STORE" />
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="#ffa31a"
+                android:text="TOP UP"
+                android:textColor="#1b1b1b"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@+id/et_topUpAmount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_topUpAmount"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btnRegisterStore"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#ffa31a"
+                android:text="REGISTER STORE"
+                android:textColor="#1b1b1b"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_topUpAmount" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardRegisterAbout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:id="@+id/cv_registerStore"
+                android:layout_width="321dp"
+                android:layout_height="340dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible">
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:background="	#808080">
 
                     <TextView
-                        android:id="@+id/registerStoreTextAbout"
-                        android:layout_width="match_parent"
+                        android:id="@+id/tv_registerStore"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="5dp"
+                        android:layout_marginStart="108dp"
+                        android:layout_marginTop="16dp"
                         android:text="Register Store"
-                        android:textSize="20sp" />
+                        android:textColor="	#ffa31a"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <EditText
+                        android:id="@+id/et_storeName"
+                        android:layout_width="275dp"
+                        android:layout_height="53dp"
+                        android:layout_marginStart="21dp"
+                        android:layout_marginTop="35dp"
+                        android:ems="18"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
+                        android:minHeight="48dp"
+                        android:textColor="	#ffffff"
+                        android:textColorHint="	#ffffff"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_registerStore" />
 
-                        <EditText
-                            android:id="@+id/inputNameRegisterStore"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:layout_marginVertical="5dp"
-                            android:ems="10"
-                            android:hint="Name"
-                            android:inputType="textPersonName"
-                            android:minHeight="48dp"
-                            android:textSize="16sp" />
+                    <EditText
+                        android:id="@+id/et_storeAddress"
+                        android:layout_width="280dp"
+                        android:layout_height="43dp"
+                        android:layout_marginTop="15dp"
+                        android:ems="18"
+                        android:hint="Address"
+                        android:inputType="textPersonName"
+                        android:minHeight="48dp"
+                        android:textColor="	#ffffff"
+                        android:textColorHint="	#ffffff"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="@+id/et_storeName"
+                        app:layout_constraintStart_toStartOf="@+id/et_storeName"
+                        app:layout_constraintTop_toBottomOf="@+id/et_storeName" />
 
-                        <EditText
-                            android:id="@+id/inputAddressRegisterStore"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:layout_marginVertical="5dp"
-                            android:ems="10"
-                            android:hint="Address"
-                            android:inputType="textPersonName"
-                            android:minHeight="48dp"
-                            android:textSize="16sp" />
+                    <EditText
+                        android:id="@+id/et_storePhoneNumber"
+                        android:layout_width="278dp"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="15dp"
+                        android:ems="18"
+                        android:hint="Phone Number"
+                        android:inputType="number"
+                        android:minHeight="48dp"
+                        android:textColor="	#ffffff"
+                        android:textColorHint="	#ffffff"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="@+id/et_storeAddress"
+                        app:layout_constraintStart_toStartOf="@+id/et_storeAddress"
+                        app:layout_constraintTop_toBottomOf="@+id/et_storeAddress" />
 
-                        <EditText
-                            android:id="@+id/inputPhoneRegisterStore"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:layout_marginVertical="5dp"
-                            android:ems="10"
-                            android:hint="Phone Number"
-                            android:inputType="textPersonName"
-                            android:minHeight="48dp"
-                            android:textSize="16sp" />
+                    <Button
+                        android:id="@+id/btnRegisterStoreConfirm"
+                        android:layout_width="130dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:backgroundTint="#ffa31a"
+                        android:text="REGISTER"
+                        android:textColor="#1b1b1b"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btnRegisterStoreCancel"
+                        android:layout_width="130dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:backgroundTint="#ffa31a"
+                        android:text="CANCEL"
+                        android:textColor="	#1b1b1b"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                            <Button
-                                android:id="@+id/buttonRegisterStore"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="5dp"
-                                android:layout_marginVertical="5dp"
-                                android:layout_weight="1"
-                                android:text="REGISTER" />
-
-                            <Button
-                                android:id="@+id/cancelRegisterStore"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="5dp"
-                                android:layout_marginVertical="5dp"
-                                android:layout_weight="1"
-                                android:text="CANCEL" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardStoreAbout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:id="@+id/cv_storeExists"
+                android:layout_width="334dp"
+                android:layout_height="279dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/logoutButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="gone">
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:background="#1b1b1b">
 
                     <TextView
-                        android:id="@+id/storeInfoTextAbout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="5dp"
-                        android:layout_marginVertical="5dp"
+                        android:id="@+id/tv_store"
+                        android:layout_width="301dp"
+                        android:layout_height="31dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
                         android:text="Store"
-                        android:textSize="20sp" />
+                        android:textColor="#ffa31a"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="41dp"
-                        android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_storeName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="21dp"
+                        android:text="Name"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_store" />
 
-                        <TextView
-                            android:id="@+id/storeNameTextAbout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:layout_marginVertical="5dp"
-                            android:text="Name" />
+                    <TextView
+                        android:id="@+id/tv_storeAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Address"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="@+id/tv_storeName"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_storeName" />
 
-                        <TextView
-                            android:id="@+id/dataNameTextAbout"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:layout_marginVertical="5dp"
-                            android:layout_weight="1"
-                            android:textAlignment="textEnd" />
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_storePhoneNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Phone Number"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="@+id/tv_storeAddress"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_storeAddress" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="43dp"
-                        android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_storeNameF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_storeName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_storeName" />
 
-                        <TextView
-                            android:id="@+id/storeAddressTextAbout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:layout_marginVertical="5dp"
-                            android:text="Address" />
+                    <TextView
+                        android:id="@+id/tv_storeAddressF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_storeAddress"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_storeAddress" />
 
-                        <TextView
-                            android:id="@+id/dataAddressTextAbout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:layout_marginVertical="5dp"
-                            android:layout_weight="1"
-                            android:textAlignment="textEnd" />
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_storePhoneNumberF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_storePhoneNumber"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_storePhoneNumber" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="41dp"
-                        android:orientation="horizontal">
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <TextView
-                            android:id="@+id/storePhoneTextAbout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:layout_marginVertical="5dp"
-                            android:text="Phone Number" />
-
-                        <TextView
-                            android:id="@+id/dataPhoneTextAbout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:layout_marginVertical="5dp"
-                            android:layout_weight="1"
-                            android:textAlignment="textEnd" />
-                    </LinearLayout>
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
-        </LinearLayout>
-    </LinearLayout>
+
+            <Button
+                android:id="@+id/logoutButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="128dp"
+                android:layout_marginEnd="128dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="#ffa31a"
+                android:text="LOG OUT"
+                android:textColor="#1b1b1b"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

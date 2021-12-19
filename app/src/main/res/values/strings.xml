@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">jmart-android</string>
+    <string name="app_name"><font fgcolor='#ffa31a'>Jmart</font></string>
 
     <string-array name="productCategory">
         <item>BOOK</item>

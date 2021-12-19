@@ -3,5 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/search" android:icon="@drawable/ic_baseline_search_24" android:title="Search" app:actionViewClass="androidx.appcompat.widget.SearchView" app:showAsAction="collapseActionView|always"/>
     <item android:id="@+id/add" android:icon="@drawable/ic_baseline_add_box_24" android:title="Add" app:showAsAction="collapseActionView|always"/>
+    <item android:id="@+id/history_personal_button"
+        android:icon="@drawable/ic_baseline_history_24"
+        android:title="Account Button"
+        app:showAsAction="collapseActionView|always"/>
     <item android:id="@+id/parent" android:icon="@drawable/ic_baseline_person_24" android:title="Product" app:showAsAction="collapseActionView|always"/>
 </menu>

@@ -1,5 +1,12 @@
 package com.MuhammadFarhanHaniftyajiJmartMR.jmart_android.model;
 
+/**
+ * Class ProductCategory here
+ * model as a ProductCategory similar to backend
+ * @author Muhammad Farhan Haniftyaji
+ * @version 1.0
+ */
+
 public enum ProductCategory {
     BOOK,
     KITCHEN,

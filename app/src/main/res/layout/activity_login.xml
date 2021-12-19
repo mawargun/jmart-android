@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".LoginActivity">
 
     <EditText
@@ -14,9 +15,13 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="101dp"
         android:layout_marginBottom="40dp"
+        android:background="#808080"
+        android:backgroundTint="#808080"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:textColor="#ffffff"
+        android:textColorHint="#80FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +35,7 @@
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="240dp"
         android:text="Register Now!"
-        android:textColor="#3F51B5"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +51,7 @@
         android:layout_marginEnd="143dp"
         android:layout_marginBottom="7dp"
         android:text="Don't Have Account?"
-        android:textColor="#3F51B5"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,9 +65,12 @@
         android:layout_marginTop="205dp"
         android:layout_marginEnd="101dp"
         android:layout_marginBottom="10dp"
+        android:background="#808080"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:textColor="#ffffff"
+        android:textColorHint="#80FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,10 +82,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="162dp"
         android:layout_marginEnd="162dp"
+        android:backgroundTint="#ffa31a"
         android:text="Login"
+        android:textColor="#1b1b1b"
+        android:textColorHint="#1b1b1b"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="128dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="132dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logoapp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

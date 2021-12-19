@@ -19,6 +19,15 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * Class LoginActivity here
+ * class to display the account register page for new users
+ * New users can create an account by entering the appropriate name, email address, and password
+ * @author Muhammad Farhan Haniftyaji
+ * @version 1.0
+ *
+ */
+
 public class RegisterActivity extends AppCompatActivity {
 
     private static final Gson gson = new Gson();
@@ -55,7 +64,6 @@ public class RegisterActivity extends AppCompatActivity {
                 RegisterRequest registerRequest = new RegisterRequest(textname.getText().toString(), textemail.getText().toString(), textpassword.getText().toString(), listener, null);
                 RequestQueue requestQueue = Volley.newRequestQueue(RegisterActivity.this);
                 requestQueue.add(registerRequest);
-
             }
         });
     }

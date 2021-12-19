@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.MuhammadFarhanHaniftyajiJmartMR.jmart_android.model.Account;
+import com.MuhammadFarhanHaniftyajiJmartMR.jmart_android.model.Store;
 import com.MuhammadFarhanHaniftyajiJmartMR.jmart_android.request.LoginRequest;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -20,12 +21,26 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * Class LoginActivity here
+ * class to login user by entering registered email and password
+ * user can make an account if they dont have account yet if they press register account
+ * @author Muhammad Farhan Haniftyaji
+ * @version 1.0
+ *
+ */
+
 public class LoginActivity extends AppCompatActivity {
     private static final Gson gson = new Gson();
     public static Account loggedAccount;
 
     public static Account getLoggedAccount(){
         return loggedAccount;
+    }
+
+    public static void insertLoggedAccountStore(String response){
+        Store newStore = gson.fromJson(response, Store.class);
+        loggedAccount.store = newStore;
     }
 
     @Override

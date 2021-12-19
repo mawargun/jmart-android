@@ -8,6 +8,14 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 
+/**
+ * Class VPAdapter here, extends FragmentPagerAdapter
+ * class to connect the filter fragment and product fragment to the main activity
+ * @author Muhammad Farhan Haniftyaji
+ * @version 1.0
+ *
+ */
+
 public class VPAdapter extends FragmentPagerAdapter {
 
     private final ArrayList<Fragment> fragmentArrayList = new ArrayList<>();

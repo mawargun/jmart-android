@@ -9,6 +9,13 @@ import java.util.Map;
 
 import androidx.annotation.Nullable;
 
+/**
+ * Class CreateProductRequest here
+ * Handle request about creating new product and connect it with back-end so users can create product
+ * @author Muhammad Farhan Haniftyaji
+ * @version 1.0
+ */
+
 public class CreateProductRequest extends StringRequest {
 
     public static final String URL = "http://10.0.2.2:8080/product/create";
